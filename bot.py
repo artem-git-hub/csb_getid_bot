@@ -1,7 +1,7 @@
 import telebot
 
 
-bot = telebot.TeleBot("1994234054:AAFfuFh7k05x3dSuHgymLgUMwBXOAgc9slY")
+bot = telebot.TeleBot("5067314446:AAGfyeIzEqVVEoztaZkrfMrzk4vFW17X0Q4")
 
 CONTENT_TYPES = ["text", "audio", "document", "photo", "sticker", "video", "video_note", "voice", "location", "contact",
                  "new_chat_members", "left_chat_member", "new_chat_title", "new_chat_photo", "delete_chat_photo",
