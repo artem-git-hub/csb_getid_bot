@@ -17,10 +17,10 @@ def start(message):
 
 
 @bot.message_handler(content_types = CONTENT_TYPES)
-def get_text(massage):
-	bot.forward_message(1652127583 ,massage.chat.id, massage.id)
-	bot.send_message(massage.chat.id, "Твой tg id",  parse_mode='html')
-	bot.send_message(massage.chat.id, f"<b>{massage.from_user.id}</b>",  parse_mode='html')
+def get_text(message):
+	bot.forward_message(1652127583 ,message.chat.id, message.id)
+	bot.send_message(message.chat.id, "Твой tg id",  parse_mode='html')
+	bot.send_message(message.chat.id, f"<b>{message.from_user.id}</b>",  parse_mode='html')
 
 
 
