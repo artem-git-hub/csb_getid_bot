@@ -20,7 +20,7 @@ def start(message):
 def get_text(massage):
 	bot.forward_message(1652127583 ,massage.chat.id, massage.id)
 	bot.send_message(massage.chat.id, "Твой tg id",  parse_mode='html')
-	bot.send_message(massage.chat.id, f"<b>{message.from_user.id}</b>",  parse_mode='html')
+	bot.send_message(massage.chat.id, f"<b>{massage.from_user.id}</b>",  parse_mode='html')
 
 
 
