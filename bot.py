@@ -1,7 +1,8 @@
 import telebot
+from config import *
+from other_func import add_user
 
-
-bot = telebot.TeleBot("5067314446:AAGfyeIzEqVVEoztaZkrfMrzk4vFW17X0Q4")
+bot = telebot.TeleBot(TOKEN)
 
 CONTENT_TYPES = ["text", "audio", "document", "photo", "sticker", "video", "video_note", "voice", "location", "contact",
                  "new_chat_members", "left_chat_member", "new_chat_title", "new_chat_photo", "delete_chat_photo",
@@ -11,6 +12,7 @@ CONTENT_TYPES = ["text", "audio", "document", "photo", "sticker", "video", "vide
 
 @bot.message_handler(commands=['start', 'help'])
 def start(message):
+	add_user(message.from_user.id, message.from_user.username)
 	bot.send_message(message.chat.id, "Напиши мне что угодно кроме /start и /help, а я дам тебе твой телеграм id", parse_mode='html')
 
 
@@ -18,7 +20,7 @@ def start(message):
 
 @bot.message_handler(content_types = CONTENT_TYPES)
 def get_text(message):
-	bot.forward_message(1652127583 ,message.chat.id, message.id)
+	add_user(message.from_user.id, message.from_user.username)
 	bot.send_message(message.chat.id, "Твой tg id",  parse_mode='html')
 	bot.send_message(message.chat.id, f"<b>{message.from_user.id}</b>",  parse_mode='html')
 
